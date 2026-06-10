@@ -1,0 +1,25 @@
+[0.114s] Invoking command in '/root/turtlebot3_ws/build/my_nav_nodes': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /root/turtlebot3_ws/build/my_nav_nodes -- -j32 -l32
+[0.304s] [ 50%] [32mBuilding CXX object CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o[0m
+[9.134s] [100%] [32m[1mLinking CXX executable wall_follower[0m
+[9.417s] [100%] Built target wall_follower
+[9.426s] Invoked command in '/root/turtlebot3_ws/build/my_nav_nodes' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /root/turtlebot3_ws/build/my_nav_nodes -- -j32 -l32
+[9.436s] Invoking command in '/root/turtlebot3_ws/build/my_nav_nodes': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /root/turtlebot3_ws/build/my_nav_nodes
+[9.443s] -- Install configuration: ""
+[9.444s] -- Execute custom install script
+[9.444s] -- Up-to-date symlink: /root/turtlebot3_ws/install/my_nav_nodes/lib/my_nav_nodes/wall_follower
+[9.445s] -- Up-to-date symlink: /root/turtlebot3_ws/install/my_nav_nodes/share/ament_index/resource_index/package_run_dependencies/my_nav_nodes
+[9.445s] -- Up-to-date symlink: /root/turtlebot3_ws/install/my_nav_nodes/share/ament_index/resource_index/parent_prefix_path/my_nav_nodes
+[9.445s] -- Up-to-date symlink: /root/turtlebot3_ws/install/my_nav_nodes/share/my_nav_nodes/environment/ament_prefix_path.sh
+[9.445s] -- Up-to-date symlink: /root/turtlebot3_ws/install/my_nav_nodes/share/my_nav_nodes/environment/ament_prefix_path.dsv
+[9.446s] -- Up-to-date symlink: /root/turtlebot3_ws/install/my_nav_nodes/share/my_nav_nodes/environment/path.sh
+[9.446s] -- Up-to-date symlink: /root/turtlebot3_ws/install/my_nav_nodes/share/my_nav_nodes/environment/path.dsv
+[9.446s] -- Up-to-date symlink: /root/turtlebot3_ws/install/my_nav_nodes/share/my_nav_nodes/local_setup.bash
+[9.446s] -- Up-to-date symlink: /root/turtlebot3_ws/install/my_nav_nodes/share/my_nav_nodes/local_setup.sh
+[9.447s] -- Up-to-date symlink: /root/turtlebot3_ws/install/my_nav_nodes/share/my_nav_nodes/local_setup.zsh
+[9.447s] -- Up-to-date symlink: /root/turtlebot3_ws/install/my_nav_nodes/share/my_nav_nodes/local_setup.dsv
+[9.447s] -- Symlinking: /root/turtlebot3_ws/install/my_nav_nodes/share/my_nav_nodes/package.dsv
+[9.457s] -- Up-to-date symlink: /root/turtlebot3_ws/install/my_nav_nodes/share/ament_index/resource_index/packages/my_nav_nodes
+[9.457s] -- Up-to-date symlink: /root/turtlebot3_ws/install/my_nav_nodes/share/my_nav_nodes/cmake/my_nav_nodesConfig.cmake
+[9.457s] -- Up-to-date symlink: /root/turtlebot3_ws/install/my_nav_nodes/share/my_nav_nodes/cmake/my_nav_nodesConfig-version.cmake
+[9.457s] -- Up-to-date symlink: /root/turtlebot3_ws/install/my_nav_nodes/share/my_nav_nodes/package.xml
+[9.459s] Invoked command in '/root/turtlebot3_ws/build/my_nav_nodes' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /root/turtlebot3_ws/build/my_nav_nodes

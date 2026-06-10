@@ -1,0 +1,6 @@
+Invoking command in '/root/turtlebot3_ws/build/my_nav_nodes': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /root/turtlebot3_ws/src/my_nav_nodes -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/turtlebot3_ws/install/my_nav_nodes
+Invoked command in '/root/turtlebot3_ws/build/my_nav_nodes' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /root/turtlebot3_ws/src/my_nav_nodes -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/turtlebot3_ws/install/my_nav_nodes
+Invoking command in '/root/turtlebot3_ws/build/my_nav_nodes': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /root/turtlebot3_ws/build/my_nav_nodes -- -j32 -l32
+Invoked command in '/root/turtlebot3_ws/build/my_nav_nodes' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /root/turtlebot3_ws/build/my_nav_nodes -- -j32 -l32
+Invoking command in '/root/turtlebot3_ws/build/my_nav_nodes': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /root/turtlebot3_ws/build/my_nav_nodes
+Invoked command in '/root/turtlebot3_ws/build/my_nav_nodes' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /root/turtlebot3_ws/build/my_nav_nodes
