@@ -1,0 +1,12 @@
+# ROS 2 & C++ Build files
+build/
+install/
+log/
+*.o
+*.so
+
+# VS Code settings
+.vscode/
+
+# OS generated files
+.DS_Store
