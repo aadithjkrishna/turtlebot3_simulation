@@ -15,9 +15,13 @@ find_package(sensor_msgs REQUIRED)
 add_executable(wall_follower src/wall_follower.cpp)
 ament_target_dependencies(wall_follower rclcpp geometry_msgs sensor_msgs)
 
+add_executable(motus_teleop src/motus_teleop.cpp)
+ament_target_dependencies(motus_teleop rclcpp geometry_msgs)
+
 # Install Rules
 install(TARGETS
   wall_follower
+  motus_teleop
   DESTINATION lib/${PROJECT_NAME}
 )
 

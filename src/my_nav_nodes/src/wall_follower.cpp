@@ -2,7 +2,7 @@
 #include <memory>
 #include <cmath>
 #include "rclcpp/rclcpp.hpp"
-#include "geometry_msgs/msg/twist_stamped.hpp" // <-- Updated header
+#include "geometry_msgs/msg/twist.hpp"
 #include "sensor_msgs/msg/laser_scan.hpp"
 
 class WallFollower : public rclcpp::Node
@@ -10,24 +10,15 @@ class WallFollower : public rclcpp::Node
 public:
   WallFollower() : Node("wall_follower_node")
   {
-    // 1. Update publisher to TwistStamped
-    publisher_ = this->create_publisher<geometry_msgs::msg::TwistStamped>(
-      "/cmd_vel", rclcpp::SystemDefaultsQoS());
-      
+    publisher_ = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
     subscription_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
-      "/scan", rclcpp::SystemDefaultsQoS(), std::bind(&WallFollower::scan_callback, this, std::placeholders::_1));
+      "/scan", 10, std::bind(&WallFollower::scan_callback, this, std::placeholders::_1));
   }
 
 private:
   void scan_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
   {
-    // 2. Create the Stamped message envelope
-    auto twist_msg = geometry_msgs::msg::TwistStamped();
-    
-    // 3. Populate the exact timestamp and frame for the Gazebo bridge
-    twist_msg.header.stamp = this->get_clock()->now();
-    twist_msg.header.frame_id = "base_link"; 
-
+    auto twist = geometry_msgs::msg::Twist();
     float front_distance = msg->ranges[0];
     float right_distance = msg->ranges[270];
 
@@ -36,22 +27,18 @@ private:
 
     RCLCPP_INFO(this->get_logger(), "Front: %.2f m | Right: %.2f m", front_distance, right_distance);
 
-    // 4. Assign velocity values to the internal 'twist' object
     if (front_distance < 0.5) {
-      twist_msg.twist.linear.x = 0.0;
-      twist_msg.twist.angular.z = 0.6; // Hard left away from obstacle
+      twist.linear.x = 0.0;
+      twist.angular.z = 0.6; // Hard left away from obstacle
     } else {
-      twist_msg.twist.linear.x = 0.15; // Smooth cruise
-      if (right_distance > 0.45) twist_msg.twist.angular.z = -0.15; // Shift right closer to wall
-      else if (right_distance < 0.35) twist_msg.twist.angular.z = 0.15; // Shift left away from wall
-      else twist_msg.twist.angular.z = 0.0;
+      twist.linear.x = 0.15; // Smooth cruise
+      if (right_distance > 0.45) twist.angular.z = -0.15; // Shift right closer to wall
+      else if (right_distance < 0.35) twist.angular.z = 0.15; // Adjust left away from wall
+      else twist.angular.z = 0.0;
     }
-    
-    // Publish the stamped envelope
-    publisher_->publish(twist_msg);
+    publisher_->publish(twist);
   }
-  
-  rclcpp::Publisher<geometry_msgs::msg::TwistStamped>::SharedPtr publisher_;
+  rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr publisher_;
   rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr subscription_;
 };
 
